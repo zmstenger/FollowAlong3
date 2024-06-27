@@ -1,19 +1,20 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class InputHandler : MonoBehaviour
+namespace _app.Scripts
 {
-   private void Update()
-   {
-      if (Input.GetKeyDown(KeyCode.S))
-      {
-         DelegateManager.scoreEvent?.Invoke();
-      }
-      if (Input.GetKeyDown(KeyCode.D)
-      {
-         DelegateManager.scoreEvent?.Invoke();
-      }
-   }
+    public class InputHandler : MonoBehaviour
+    {
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                DelegateManager.scoreEvent?.Invoke();
+                DelegateManager.stringEvent?.Invoke("Hello");
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                DelegateManager.deathEvent?.Invoke();
+            }
+        }
+    }
 }
